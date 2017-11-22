@@ -1,0 +1,26 @@
+# repertoire a ne pas changer:
+command_directory = /usr/sbin
+daemon_directory = /usr/libexec/postfix
+mail_owner = postfix
+#nom annoncé par le serveur mail:
+smtpd_banner = $myhostname ESMTP $mail_name (RedHat/GNU)
+# groupe des utilisateurs de postfix present dans /etc/groups
+setgid_group = postdrop
+#emmetre ou non des messages "live" en console pour avertir tous ceux qui ont "biff y" de l'arrivée de nouveaux 
+biff = no
+#nom complet de la machine servant de serveur mail
+myhostname = wifioceaniahotels
+mydomain = oceaniahotels.com
+myorigin = $mydomain
+#mydestination = localhost
+mydestination = localhost, localhost.$mydomain, $mydomain
+#relayhost = [www.hotel-sofibra.com]
+relayhost = [mail.oceaniahotels.com]
+#relayhost = [fr.oleane.com]
+
+inet_interfaces = all
+#####ALIAS: on "génèrera" la bd d'alias par la commandes: postalias hash:/etc/aliases #####
+#consultation des aliases
+alias_maps = hash:/etc/postfix/aliases
+#chemin de la bd d'alias
+alias_database = hash:/etc/postfix/aliases

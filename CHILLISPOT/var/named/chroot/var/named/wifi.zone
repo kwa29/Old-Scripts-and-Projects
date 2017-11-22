@@ -1,0 +1,10 @@
+$TTL    3H
+@                       IN 	SOA     ns.wifi webmaster.wifi. (
+                                        42              ; serial (d. adams)
+                                        3H              ; refresh
+                                        15M             ; retry
+                                        1W              ; expiry
+                                        1D )            ; minimum
+
+     	                IN 	NS	ns.wifi        
+wifi.oceaniahotels.com	IN	A	192.168.157.1	

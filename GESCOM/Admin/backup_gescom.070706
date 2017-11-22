@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# ---------------
+# SCRIPT DE COMPRESSION DE DONNEES D'UNE ARCHIVE TAR EN BZ2 ET GZ
+# KWA29
+# 26/07/2004
+# ---------------
+# Configuration Mysql
+PATH2DB=/var/lib/mysql
+PATH1BACKUP=/data/Backup/Gescom
+PATH2BACKUP=/var/www/html/gescom/Admin/Spool
+MY_USER='root'
+MY_PASSWD='2#tB(5K'
+DATE=`date +%d%m%y`
+NOMFICHIER=backup_"$DATE"_MySQL.tar.gz
+
+#
+#### NE RIEN MODIFIER CI DESSOUS
+#
+
+RSLT_CMD=`ls -1 --ignore my.cnf --ignore PCDEV.pid --ignore PCDEV.err --ignore mysql.sock --ignore test /$PATH2DB`
+ERROR=0
+for i in $RSLT_CMD; do
+mysqldump --opt --user=$MY_USER --password=$MY_PASSWD $i >$PATH2BACKUP/$i.sql 2>/dev/null
+if [ "$?" -eq '0' ]; then
+echo "Backup MySQL $i effectué."
+else
+echo "Echec du backup de la base $i."
+ERROR=1
+fi
+done
+
+#if [ "$ERROR" -eq '1' ]; then
+echo "----------------------------"
+echo "Backup total terminé."
+echo "Des erreurs se sont produites pendant la sauvegarde."
+#else
+echo "----------------------------"
+echo "Backup total terminé."
+echo "L'ensemble de la sauvegarde s'est déroulée correctement".
+#fi
+
+tar -czvf $PATH1BACKUP/$NOMFICHIER $PATH2BACKUP/
+# Nettoyage du repertoire temporaire
+rm -fr $PATH2BACKUP/*
+
+exit 0
+)

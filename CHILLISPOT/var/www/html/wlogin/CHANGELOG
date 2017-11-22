@@ -1,0 +1,9 @@
+version: 1.10
+- Adaptations for changes in API introduced in chillispot v.0.97.
+- Enhancements to javascript functions including countdown timer in
+  status popup window.
+
+version: 1.00
+- Initial release based on hotspotlogin.php and hotspotlogin.cgi (see
+  CREDITS file).
+

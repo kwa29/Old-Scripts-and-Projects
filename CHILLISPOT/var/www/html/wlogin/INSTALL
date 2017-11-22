@@ -1,0 +1,66 @@
+NOTE: Installation assumes apache, ssl, and php on a linux system.
+Other setups may work fine.  This also assumes linux skills and root
+access.  Afterall, let's face it, if your trying to set up a
+chillispot access point, you're going to need these anyway.
+
+
+
+1. untar the scripts wherever you want your secure webserver DocumentRoot.
+For example:
+
+$ mv wlogin.x.xx.tgz /home/mysite.com/ssl/.
+$ cd /home/mysite.com/ssl
+$ tar xvzf wlogin.x.xx.tgz
+$ ln -s   wlogin.x.xx   wlogin
+
+This will create:
+
+/home/mysite.com/ssl/wlogin.x.xx
+/home/mysite.com/ssl/wlogin.x.xx/site-doc
+/home/mysite.com/ssl/wlogin.x.xx/site-lib
+
+The symbolic link comes in handy when setting up apache.
+
+All files in the tarball extract within these directories.
+
+
+
+2. You should point your secure webserver's DocumentRoot to the
+site-doc directory.  Following the example above:
+
+<VirtualHost *:443>
+  ServerName wlogin.mysite.com
+  DocumentRoot /home/mysite.com/wlogin/site-doc
+  ServerAdmin admin@mysite.com
+ 
+  SSLEngine on
+  SSLCipherSuite ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP:+eNULL
+  SSLCertificateFile /etc/httpd/conf/ssl.crt/wlogin.crt
+  SSLCertificateKeyFile /etc/httpd/conf/ssl.key/wlogin.key
+  SSLCACertificateFile /usr/share/ssl/certs/ca-bundle.crt
+ 
+  <Files ~ "\.(php3|php?)$">
+    SSLOptions +StdEnvVars
+  </Files>
+ 
+  SetEnvIf User-Agent ".*MSIE.*" \
+         nokeepalive ssl-unclean-shutdown \
+         downgrade-1.0 force-response-1.0
+</VirtualHost>
+
+
+
+3. Edit ./wlogin/site-lib/config.inc to suit your setup.
+
+
+
+4. Modify or create a new wlogin/site-doc/images/wireless_logo.png.  A
+layered xcf file is included for gimp users!
+
+Also, modify ./wlogin/site-doc/style/styles.css to suit your tastes.
+Be sure to make it nice and ugly and specify really awful fonts that
+only windows users could possibly have (with defualts for sans-serif
+for the rest of us ;^b ).
+
+--
+Drew

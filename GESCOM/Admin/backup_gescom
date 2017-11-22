@@ -1,0 +1,22 @@
+#!/bin/sh
+# ---------------
+# SCRIPT DE COMPRESSION DE DONNEES D'UNE ARCHIVE TAR EN BZ2 ET GZ
+# ---------------
+# Configuration Mysql
+DATE=`date +%d%m%y`
+NOMFIC=backup_Mysql.tar.gz
+
+#
+#### NE RIEN MODIFIER CI DESSOUS
+#
+cd /data/Backup/Gescom
+
+mv $NOMFIC.4 $NOMFIC.5
+mv $NOMFIC.3 $NOMFIC.4
+mv $NOMFIC.2 $NOMFIC.3
+mv $NOMFIC.1 $NOMFIC.2
+mv $NOMFIC $NOMFIC.1
+
+cd  /var/lib/mysql
+tar -czvf /data/Backup/Gescom/$NOMFIC ./*
+

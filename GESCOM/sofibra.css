@@ -1,0 +1,152 @@
+/* CSS Document */
+//body{
+  background: #FFE0A3;
+ }
+
+
+.menu{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	color: #5E5E5E;
+	text-decoration: none;
+	
+	}
+.menu:hover{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	color: black;
+	text-decoration: none;
+	
+}
+input{
+	font-family:Geneva,Arial;
+	font-size:12px;
+	border:1px solid;
+	color:black;
+	border-color:#999999;
+	text-decoration:none;
+	
+}
+textarea{
+	font-family:Helvetica,Arial;
+	font-size:11px;
+	border:1px solid;
+	border-color:#999999;
+}
+
+.text{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	color: #4B4B4B;
+	text-decoration: none;
+}
+.saisi{
+	font-family: Geneva,Arial;
+	font-size: 12px;
+	font-style: normal;
+	color: black;
+	text-decoration: none;
+	}
+.inact{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	color: #A0A2A3;
+	text-decoration: none;
+	}
+	
+.titre{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-style: normal;
+	color: Black;
+	text-decoration: none;
+	font-weight: bold;
+}
+	
+.titretable{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	color: #5E5E5E;
+	text-decoration: none;
+	font-weight:bold;
+	}
+	
+.tableau{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	color: #5E5E5E;
+	text-decoration: underline;
+	font-weight: bold;
+	
+	}
+.tableau:hover{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: bold;
+	color: black;
+	text-decoration: underline;
+	font-weight: bold;
+
+	
+}
+.pagi{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	color: #5E5E5E;
+	text-decoration: none;
+	font-weight: bold;
+	
+	}
+.pagi:hover{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: bold;
+	color: black;
+	text-decoration: none;
+	font-weight: bold;
+}
+.date {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: italic;
+	color: #4B4B4B;
+	font-weight: normal;
+}
+.anotation {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: normal;
+	color: #4B4B4B;
+}
+.news{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	color: #5E5E5E;
+	text-decoration: none;
+	font-weight:bold;
+	}
+.grostitre{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	font-style: normal;
+	color: #5E5E5E;
+	text-decoration: none;
+	font-weight: bold;
+}
+onglets
+{
+	font : bold 11px Batang, arial, serif;
+	list-style-type : none;
+	padding-bottom : 24px;
+	border-bottom : 1px solid #9EA0A1;
+	margin-left : 0;
+}

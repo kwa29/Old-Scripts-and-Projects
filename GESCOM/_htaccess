@@ -1,0 +1,2 @@
+php_flag register_globals On
+php_flag error_reporting E_ERROR

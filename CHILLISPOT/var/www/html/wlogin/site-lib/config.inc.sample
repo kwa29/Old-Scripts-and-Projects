@@ -1,0 +1,92 @@
+<?php
+
+/*
+ * This is the name of your hotspot.  It is what will be displayed in
+ * the browser title and messages such as "Logged in to _My HotSpot_".
+ */
+define("HOTSPOT_NAME", "My HotSpot");
+
+/*
+ * Set the UAM IP and UAM Port to point to the chillispot server.
+ */
+define("UAMIP", "192.168.182.1"); # maquette
+# define("UAMIP", "192.168.154.1"); # hotel MAA
+# define("UAMIP", "192.168.155.1"); # hotel HOC
+# define("UAMIP", "192.168.156.1"); # hotel AMB
+# define("UAMIP", "192.168.157.1"); # hotel OCB
+# define("UAMIP", "192.168.158.1"); # hotel OBA
+# define("UAMIP", "192.168.159.1"); # hotel JUD
+# define("UAMIP", "192.168.160.1"); # hotel MLM
+# define("UAMIP", "192.168.161.1"); # hotel MAM
+# define("UAMIP", "192.168.162.1"); # hotel MAN
+# define("UAMIP", "192.168.163.1"); # hotel OCN
+# define("UAMIP", "192.168.164.1"); # hotel MAO
+# define("UAMIP", "192.168.165.1"); # hotel MAQ
+# define("UAMIP", "192.168.166.1"); # hotel OCQ
+# define("UAMIP", "192.168.167.1"); # hotel OCR
+# define("UAMIP", "192.168.168.1"); # hotel MAS
+# define("UAMIP", "192.168.169.1"); # hotel MAV
+# define("UAMIP", "192.168.170.1"); # hotel OCS
+# define("UAMIP", "192.168.171.1"); # hotel ???
+# define("UAMIP", "192.168.172.1"); # hotel ???
+# define("UAMIP", "192.168.173.1"); # hotel ???
+
+define("UAMPORT", "3990");
+
+/*
+ * Leave this the way it is.  It's just for convenience.
+ */
+define("UAM_URL", "http://" . UAMIP . ":" . UAMPORT);
+
+/*
+ * Set this to the base url of your login website.
+ *
+ * for example: "https://wireless_login.mysite.com/"
+ */
+define("BASE_URL", "https://wlogin.mysite.com/");
+
+/*
+ * Set this to the url where you find the login script (index.php).
+ *
+ * for example: 'BASE_URL' or 'BASE_URL . "hotspotlogin/"'
+ */
+define("LOGINPATH", BASE_URL);
+
+/*
+ * Set to true to enable login cookie to store username and password.
+ */
+define("ENABLE_LOGIN_COOKIE", true);
+
+/*
+ * Set this to "true" to enable debugging output.
+ */
+define("DEBUG_MODE", false);
+
+/*
+ * Shared secret used to encrypt challenge with. Prevents dictionary
+ * attacks.  You should change this to your own shared secret.
+ *
+ * NOTE: This should match chilli.conf's 'uamsecret'.
+ */
+define("UAMSECRET", "yourSecretGoesInHere");
+
+/*
+ * Best to leave the following line alone if you want to use ordinary
+ * user-password for radius authentication. Must be used together with
+ * UAMSECRET (above).
+ */
+define("USERPASSWORD", true);
+
+/*
+ * For now, there's no better place to put a couple common utility
+ * functions (since there's only one).
+ */
+function mypr($d) {
+  echo "<pre>\n";
+  print_r($d);
+  echo "</pre>\n";
+}
+
+
+
+?>
