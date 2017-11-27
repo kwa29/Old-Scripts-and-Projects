@@ -9,7 +9,7 @@
 
 $ftp_server ="192.168.100.103";
 $ftp_user_name="root";
-$ftp_user_pass="bridge";
+$ftp_user_pass="*****";
 
 // Création du repertoire en fonction da la date
 $lemois = date("m");
