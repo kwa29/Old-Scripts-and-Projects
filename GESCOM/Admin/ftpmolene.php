@@ -7,7 +7,7 @@
 <?php
 $ftp_server ="192.168.100.103";
 $ftp_user_name="root";
-$ftp_user_pass="bridge";
+$ftp_user_pass="******";
 
 $destination_file="/var/www/html/gescom/Admin/Spool/";
 $source_file='/usr2/report/stats/';
